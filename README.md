@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# 🎭 VibeFinder
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**VibeFinder** is a mood-based movie discovery web app that blends theatrical aesthetics with real-time movie recommendations. Just select how you feel — and we’ll serve you a curated list of films to match the vibe.
 
-## Available Scripts
+![VibeFinder Logo](./public/logo.png)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌟 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🎬 Mood-based movie suggestions (happy, sad, angry, calm, curious, bored)
+- 🌗 Dark & light theme toggle with stylish transitions
+- 🧠 "Psychonauts-style" UI with dynamic background animations
+- 🎭 Interactive flip cards for trailers and summaries
+- 🎲 Randomized results each visit
+- ❌ Adult content filtered out
+- 📱 Responsive and mobile-friendly
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🚀 Live Demo
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Coming soon!
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend:** React, Tailwind CSS (optional), vanilla CSS animations
+- **Backend:** Flask + TMDB API
+- **API Source:** [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api)
+- **Deployment:** GitHub Pages / Vercel (Frontend), Render / Railway (Backend)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📦 Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 1. Clone the Repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/YOUR_USERNAME/vibefinder.git
+cd vibefinder
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2. Fontend Setup
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ ```bash
+ cd client
+ npm install
+ npm start
+```
 
-## Learn More
+### 3. Backend Setup
+```bash
+cd server
+pip install -r requirements.txt
+```
+* Create `.env` file:
+```env
+TMDB_API_KEY=your_tmdb_api_key_here
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Then run:
+```bash
+py app.py
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## ✨ Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### 🙅 Content Filtering
+We filter out adult or violent content using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* `include_adult=false`
 
-### Making a Progressive Web App
+* Targeting specific family-friendly genres (e.g., 10751)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ❤️ Credits
+Thanks to:
+* TMDB
+* You for vibing!

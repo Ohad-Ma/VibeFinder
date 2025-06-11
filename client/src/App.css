@@ -1,0 +1,637 @@
+/* App.css */
+
+html,
+body {
+  height: 100%;
+  overflow-y: true;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  transition: all 0.8s ease-in-out;
+  height: 180px;
+}
+
+.logo {
+ /* width: 1000px; */
+  /* max-width: 400%; */
+  height: auto;
+  transition: transform 0.6s ease-in-out;  /* border-radius: 20%;
+  box-shadow: 0 0 10px rgba(140, 0, 255, 0.3), 0 0 30px rgba(70, 0, 100, 0.2);
+  animation: twinkle 5s infinite ease-in-out; */
+}
+
+.logo-wrapper.logo-animate {
+  transform: translateY(-80px) scale(0.6);
+  opacity: 0.6;
+}
+
+.logo-wrapper.logo-animate .logo {
+  transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.page-wrapper {
+  min-height: 100vh;
+  transition: background-image 0.5s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 0;
+  padding-top: 4rem;
+}
+
+.app-container {
+  max-width: 1200px; /* ⬅ wider */
+  min-height: 80vh; /* ⬅ taller */
+  margin: 0rem auto;
+  padding: 2rem 3rem;
+  background: rgba(255, 255, 255, 0.85); /* or dark rgba in dark mode */
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 4;
+  /* visibility: hidden;  */
+}
+
+body.dark-mode .app-container {
+  background: rgba(25, 25, 40, 0.92);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.mood-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  transition: transform 0.6s ease, scale 0.6s ease;
+}
+
+.mood-buttons.shrunk {
+  transform: scale(0.8);
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+.mood-buttons button {
+  font-size: 1.25rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.mood-buttons button:hover {
+  background: #c7d2fe;
+  transform: scale(1.1);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-weight: bold;
+}
+
+.places-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.place-card {
+  background: #fafafa;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+}
+
+.place-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.place-card h3 {
+  font-size: 1.1rem;
+  margin: 0.75rem;
+}
+
+.place-card p {
+  margin: 0.5rem 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.no-image {
+  width: 100%;
+  height: 160px;
+  background-color: #d1d5db;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #374151;
+}
+
+.map-section {
+  margin-top: 2rem;
+}
+
+.map-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 320px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* DARK MODE SUPPORT */
+.dark-mode {
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .app-container {
+  background: rgba(20, 20, 40, 0.95);
+  box-shadow: 0 0 30px rgba(150, 0, 255, 0.15);
+}
+
+.dark-mode .place-card {
+  background-color: #2a2a3d;
+  color: #f1f1f1;
+}
+
+.dark-mode .mood-buttons button {
+  background-color: #333c5a;
+  color: #d1d5ff;
+}
+
+.dark-mode .back-to-top {
+  background-color: #6366f1;
+}
+
+.dark-mode .no-image {
+  background-color: #555;
+  color: white;
+}
+
+/* SPINNER */
+.spinner-container {
+  text-align: center;
+  margin: 1rem;
+}
+
+.spinner {
+  margin: 1rem auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.neo/* === Psychonauts Toggle Button === */
+.psychonauts-toggle {
+  position: relative;
+  width: 80px;
+  height: 42px;
+  background: linear-gradient(145deg, #52286e, #9f54c5);
+  border: 4px solid #e0bfff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #ba8cff, inset 0 0 6px #520088;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  outline: none;
+  display: inline-block;
+}
+
+.psychonauts-toggle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 34px;
+  height: 34px;
+  background: radial-gradient(circle at 30% 30%, #f9f1ff, #c38eff);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 8px #fff, inset 0 0 4px #000;
+}
+
+.psychonauts-toggle.checked::before {
+  transform: translateX(38px);
+}
+
+/* Optional Hover Enhancement */
+.psychonauts-toggle:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.psychonauts-toggle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  min-width: 80px;
+  min-height: 42px;
+}
+
+.psychonauts-toggle {
+  position: relative;
+  width: 80px;
+  height: 42px;
+  background: linear-gradient(145deg, #52286e, #9f54c5);
+  border: 4px solid #e0bfff;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #ba8cff, inset 0 0 6px #520088;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.psychonauts-toggle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 34px;
+  height: 34px;
+  background: radial-gradient(circle at 30% 30%, #f9f1ff, #c38eff);
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 8px #fff, inset 0 0 4px #000;
+}
+
+.psychonauts-toggle.checked::before {
+  transform: translateX(38px);
+}
+
+.page-wrapper {
+  opacity: 1;
+  transition: background 1s ease, opacity 0.6s ease;
+}
+
+.page-wrapper.fade-out {
+  opacity: 0;
+}
+
+/* Light Theater */
+body.light-mode .page-wrapper {
+  background: url("./light-theater.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #111;
+}
+
+/* Dark Theater */
+body.dark-mode .page-wrapper {
+  background: url("./dark-theater.png") no-repeat center center fixed;
+  background-size: cover;
+  color: #f5f5f5;
+}
+
+body.light-mode .app-container {
+  background: rgba(255, 255, 255, 0.85);
+  color: #111;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+body.light-mode .mood-buttons button {
+  background-color: white;
+  color: #1e3a8a;
+  font-weight: bold;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.bg-prop {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.page-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Position and animate dark theme props */
+.dark-prop.stars {
+  top: 0;
+  right: 0;
+  width: 50%;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5))
+    drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+  animation: twinkle 1.25s infinite ease-in-out;
+}
+
+.dark-prop.moon {
+  top: 10%;
+  left: 5%;
+  width: 500px;
+  animation: floatUpDown 6s ease-in-out infinite;
+}
+
+.dark-prop.clouds {
+  top: 10%;
+  left: -100px;
+  width: 300px;
+  animation: moveClouds 60s linear infinite;
+}
+
+.dark-prop.castle {
+  bottom: 0;
+  left: 0;
+  height: 500px;
+}
+
+/* Light theme props */
+
+.light-prop.clouds {
+  top: 15%;
+  left: -150px;
+  width: 300px;
+  animation: moveClouds 80s linear infinite;
+  z-index: 3;
+}
+
+.light-prop.flowers {
+  bottom: 0;
+  left: 10%;
+  width: 500px;
+  height: 200px;
+  z-index: 1;
+}
+
+.light-prop.hills {
+  bottom: -500px;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  opacity: 90;
+}
+
+.light-prop.sun {
+  top: 0%;
+  right: 10%;
+  width: 500px;
+  animation: pulse 4s infinite;
+  z-index: 2;
+}
+
+/* Animations */
+@keyframes moveClouds {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150vw);
+  }
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  column-gap: 2rem;     /* horizontal gap */
+  row-gap: 3rem;        /* vertical gap between rows */
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.movie-card {
+  perspective: 1200px;
+  width: 240px;
+  height: 420px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  border-radius: 20px;
+  background: radial-gradient(circle at 30% 30%, #2e1933, #1a1020);
+  box-shadow: 0 0 15px rgba(100, 0, 150, 0.5), inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* bouncy flip */
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(140, 0, 255, 0.3), 0 0 30px rgba(70, 0, 100, 0.2);
+}
+
+.movie-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 97%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2),
+    inset 0 0 6px rgba(255, 255, 255, 0.05);
+}
+
+.card-front {
+  background: linear-gradient(135deg, #3d2c54, #1f112c);
+  color: #fafafa;
+  text-shadow: 0 0 2px #000;
+}
+
+.card-front img {
+  width: 100%;
+  height: 325px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 0.1rem;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: radial-gradient(circle at top, #1e1429, #0d0612);
+  color: #ffddff;
+  font-family: "Courier New", monospace;
+  overflow-y: auto;
+  padding-right: 0.6rem;
+  text-shadow: 0 0 3px #50085b;
+}
+
+.card-back a {
+  color: #ffcc00;
+  text-align: center;
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.card-back a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 5px #ffd700;
+}
+
+.card-front h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.6rem;
+}
+
+.card-back p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* LIGHT MODE */
+body.light-mode .card-back {
+  background-color: #f9f9f9;
+  color: #111;
+}
+
+body.light-mode .card-back a {
+  color: #0077cc;
+}
+
+body.light-mode .card-back {
+  background: linear-gradient(to bottom, #fefefe, #eaeaff);
+  color: #222; /* Very readable */
+  box-shadow: 0 0 16px rgba(200, 150, 255, 0.3);
+}
+
+body.light-mode .card-back a {
+  color: #0066dd;
+  font-weight: bold;
+}
+
+body.light-mode .card-back p {
+  color: #333 !important; /* Forcefully fix faded text */
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+body.light-mode .movie-card {
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px rgba(200, 150, 255, 0.35),
+    inset 0 0 8px rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05); /* Optional subtle inner glow */
+}
+
+.card-back p, .card-back a {
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+
+.app-container.intro {
+  max-width: 600px;
+  min-height: auto; /* allow natural height */
+  height: auto;
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  transition: all 0.6s ease;
+}
+
+.app-container.expanded {
+  max-width: 1200px;
+  min-height: 80vh;  /* taller only after mood selected */
+  padding: 2.5rem 3rem;
+  transition: all 0.6s ease;
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  transition: all 0.6s ease;
+  
+}
+
+.logo-wrapper img {
+  width: 280px;
+  transition: all 0.6s ease;
+}
+
+.app-container.expanded .logo-wrapper img {
+  width: 140px;
+  margin-top: -1rem;
+}
