@@ -63,7 +63,7 @@ TMDB_API_KEY=your_tmdb_api_key_here
 * Then run:
 ```bash
 py app.py
-
+```
 
 ## ✨ Screenshots
 
