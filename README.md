@@ -2,7 +2,7 @@
 
 **VibeFinder** is a mood-based movie discovery web app that blends theatrical aesthetics with real-time movie recommendations. Just select how you feel — and we’ll serve you a curated list of films to match the vibe.
 
-![VibeFinder Logo](./public/logo.png)
+![VibeFinder Logo](./src/assets/logo.png)
 
 ---
 
