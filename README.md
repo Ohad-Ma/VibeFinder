@@ -4,7 +4,7 @@
 
 
 <p align="center">
-  <img src="client/src/assets/logo.png" alt="VibeFinder Logo" width="390" height="200"/>
+  <img src="client/src/assets/logo-rounded.png" alt="VibeFinder Logo" width="390" height="200";/>
 </p>
 
 ---
