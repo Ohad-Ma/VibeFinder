@@ -1,4 +1,4 @@
-# 🎭 VibeFinder
+# VibeFinder
 
 **VibeFinder** is a mood-based movie discovery web app that blends theatrical aesthetics with real-time movie recommendations. Just select how you feel — and we’ll serve you a curated list of films to match the vibe.
 
@@ -9,25 +9,25 @@
 
 ---
 
-## 🌟 Features
+## Features
 
 - 🎬 Mood-based movie suggestions (happy, sad, angry, calm, curious, bored)
-- 🌗 Dark & light theme toggle with stylish transitions
-- 🧠 "Psychonauts-style" UI with dynamic background animations
-- 🎭 Interactive flip cards for trailers and summaries
-- 🎲 Randomized results each visit
-- ❌ Adult content filtered out
-- 📱 Responsive and mobile-friendly
+- Dark & light theme toggle with stylish transitions
+- "Psychonauts-style" UI with dynamic background animations
+- Interactive flip cards for trailers and summaries
+- Randomized results each visit
+- Adult content filtered out
+- Responsive and mobile-friendly
 
 ---
 
-## 🚀 Live Demo
+## Live Demo
 
 Coming soon!
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend:** React, Tailwind CSS (optional), vanilla CSS animations
 - **Backend:** Flask + TMDB API
@@ -36,7 +36,7 @@ Coming soon!
 
 ---
 
-## 📦 Installation
+## Installation
 
 ### 1. Clone the Repository
 
@@ -68,10 +68,10 @@ TMDB_API_KEY=your_tmdb_api_key_here
 py app.py
 ```
 
-## ✨ Screenshots
+## Screenshots
 
 
-### 🙅 Content Filtering
+### Content Filtering
 We filter out adult or violent content using:
 
 * `include_adult=false`
@@ -79,7 +79,7 @@ We filter out adult or violent content using:
 * Targeting specific family-friendly genres (e.g., 10751)
 
 
-## ❤️ Credits
+## Credits
 Thanks to:
 * TMDB
 * You for vibing!
