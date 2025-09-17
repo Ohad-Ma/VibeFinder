@@ -70,6 +70,38 @@ py app.py
 
 ## Screenshots
 
+<p align="center">
+  <img src="client/src/assets/screenshot_1.png" alt="VibeFinder Logo" width="290" height="200";/>
+</p>
+
+<p align="center">
+  <img src="client/src/assets/screenshot_2.png" alt="VibeFinder Logo" width="290" height="200";/>
+</p>
+
+
+<p align="center">
+  <img src="client/src/assets/screenshot_3.png" alt="VibeFinder Logo" width="290" height="180";/>
+</p>
+
+
+<p align="center">
+  <img src="client/src/assets/screenshot_4.png" alt="VibeFinder Logo" width="290" height="200";/>
+</p>
+
+
+<p align="center">
+  <img src="client/src/assets/screenshot_5.png" alt="VibeFinder Logo" width="190" height="200";/>
+</p>
+
+
+---
+<p align="center">
+<video width="320" height="240" controls>
+  <source src="./client/src/assets/demo.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+</p>
+
 
 ### Content Filtering
 We filter out adult or violent content using:

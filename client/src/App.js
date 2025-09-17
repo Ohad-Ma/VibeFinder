@@ -200,7 +200,9 @@ function App() {
                         display: "inline-block",
                       }}
                     >
+                      <span className="rating-badge">
                       ⭐ {movie.vote_average.toFixed(1)}
+                      </span>
                     </span>
                   </h3>
                 </div>

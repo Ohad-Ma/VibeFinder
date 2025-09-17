@@ -32,23 +32,40 @@ def get_movies():
     results = []
 
     for genre_id in genre_ids:
-        page = random.randint(1, 5)  # Random page from 1 to 5
-        url = f"https://api.themoviedb.org/3/discover/movie?with_genres={genre_id}&sort_by=popularity.desc&page={page}&api_key={TMDB_API_KEY}"
-        res = requests.get(url)
+        page = random.randint(1, 5)
+
+        # Use request params instead of string concat (cleaner & safer)
+        params = {
+            "with_genres": genre_id,
+            "sort_by": "popularity.desc",
+            "page": page,
+            "api_key": TMDB_API_KEY,
+            "include_adult": "false",           # ✅ exclude adult titles
+            "include_video": "false",
+            # If you also want to block strictly-18+ certifications:
+            "certification_country": "US",
+            "certification.lte": "R",           # allow up to R (blocks NC-17/Adult)
+            # Use "PG-13" instead of "R" if you want even cleaner results
+        }
+
+        res = requests.get("https://api.themoviedb.org/3/discover/movie", params=params)
         if res.ok:
             data = res.json()
-            results.extend(data.get("results", [])[:3])  # grab fewer to avoid flooding
+            results.extend(data.get("results", [])[:3])
 
-    # Optional: shuffle & deduplicate by ID
+    # Extra safety: filter any residual adult-flagged items
+    results = [m for m in results if not m.get("adult", False)]
+
+    # Optional: shuffle & dedupe by ID (keep earlier code)
     seen_ids = set()
     unique_results = []
     for movie in results:
-        if movie['id'] not in seen_ids:
-            seen_ids.add(movie['id'])
+        mid = movie.get("id")
+        if mid and mid not in seen_ids:
+            seen_ids.add(mid)
             unique_results.append(movie)
 
     return jsonify({"results": unique_results})
-
 
 if __name__ == '__main__':
     app.run(debug=True)

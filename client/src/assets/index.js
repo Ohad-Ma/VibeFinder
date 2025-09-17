@@ -8,7 +8,7 @@ import lightClouds from './light_clouds.png';
 import lightFlowers from './light_flowers.png';
 import lightHills from './light_hills.png';
 
-import logo from './logo.png';
+import logo from './logo-rounded.png';
 
 export {
   darkStars,
