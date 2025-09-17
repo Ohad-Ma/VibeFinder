@@ -97,7 +97,7 @@ py app.py
 ---
 <p align="center">
 <video width="320" height="240" controls>
-  <source src="./client/src/assets/demo.webm" type="video/webm">
+  <source src="./client/src/assets/demo.mp4" type="video/webm">
   Your browser does not support the video tag.
 </video>
 </p>
